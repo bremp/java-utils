@@ -1,8 +1,9 @@
 # java-utils
 
-A collection of java utility methods not found in popular libraries like guava and apache commons. 
-Currently, there is only one method in this class, but overtime more will be added when the need 
-arises.
+A collection of java utility methods surprisingly not found in popular libraries like guava and apache 
+commons. This came in handy to solve unique issues on projects I've worked on. Sharing on github so 
+others can easily find and use it. Currently, there is only one method in this class, but overtime 
+more will be added when the need arises.
 
 **splitToSubLists()** - Splits a list into a given number of sublists. Tries to partition the list in 
 equal parts. It maintains the order of the main list in the sublists.
