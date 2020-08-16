@@ -9,8 +9,8 @@ public class ListUtils {
   }
 
   /**
-   * Splits a list into a given number of sublists. Tries to partition the list in equal parts. The
-   * list content is distributed in order to the given sublists.
+   * Splits a list into a given number of sublists. Tries to partition the list in equal parts. It
+   * maintains the order of the main list in the sublists.
    * https://stackoverflow.com/questions/16616560/is-there-a-simple-way-to-split-one-list-into-x-sublists
    *
    * @param list        the list to split.
