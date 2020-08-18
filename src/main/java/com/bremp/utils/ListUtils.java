@@ -1,6 +1,7 @@
 package com.bremp.utils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListUtils {
@@ -21,9 +22,14 @@ public class ListUtils {
     if (list == null) {
       throw new NullPointerException("List is null.");
     }
-
     if (numSubLists <= 0) {
       throw new IllegalArgumentException("The list must be divided by an amount greater than 0.");
+    }
+    if (list.isEmpty()) {
+      return Collections.emptyList();
+    }
+    if (numSubLists > list.size()) {
+      numSubLists = list.size();
     }
 
     List<List<T>> result = new ArrayList<>(numSubLists);
@@ -33,6 +39,7 @@ public class ListUtils {
 
     int index = 0;
     int remainderAccess = 0;
+    //noinspection ConstantConditions
     int from = index * listsSize + remainderAccess;
     int to = (index + 1) * listsSize + remainderAccess;
 
