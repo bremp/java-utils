@@ -19,13 +19,10 @@ public class ListUtils {
    * @return A list of sublists.
    */
   public static <T> List<List<T>> splitToSubLists(List<T> list, int numSubLists) {
-    if (list == null) {
-      throw new NullPointerException("List is null.");
-    }
     if (numSubLists <= 0) {
       throw new IllegalArgumentException("The list must be divided by an amount greater than 0.");
     }
-    if (list.isEmpty()) {
+    if (list == null || list.isEmpty()) {
       return Collections.emptyList();
     }
     if (numSubLists > list.size()) {

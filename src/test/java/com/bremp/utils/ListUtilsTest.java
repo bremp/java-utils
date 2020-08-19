@@ -17,16 +17,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 class ListUtilsTest {
 
   @Test
-  @DisplayName("throws exception when list is null.")
-  void whenListIsNull() {
-    List<String> list = null;
-    int numOfLists = 4;
-
-    Assertions.assertThrows(NullPointerException.class,
-        () -> ListUtils.splitToSubLists(list, numOfLists));
-  }
-
-  @Test
   @DisplayName("throws exception when number of sublists is zero.")
   void whenNumberOfSubListsIsZero() {
     List<String> list = new ArrayList<>();
@@ -34,6 +24,17 @@ class ListUtilsTest {
 
     Assertions.assertThrows(IllegalArgumentException.class,
         () -> ListUtils.splitToSubLists(list, numOfLists));
+  }
+
+  @Test
+  @DisplayName("when list is null.")
+  void whenListIsNull() {
+    List<String> list = null;
+    int numOfLists = 4;
+
+    List<List<String>> actual = ListUtils.splitToSubLists(list, numOfLists);
+
+    assertThat(actual.size(), is(0));
   }
 
   @Test
